@@ -13,7 +13,7 @@ def binary_search(s, x, left=0, right=0):
         return -1
 
 s = [1, 12, 15, 21, 27, 36, 40, 53, 68, 72]
-x = 68
+x = int(input())
 
 result = binary_search(s, x)
 
@@ -21,3 +21,6 @@ if result == -1:
     print("-1")
 else:
     print("The element is in array at the index", result)
+
+print('Here is the array: 1, 12, 15, 21, 27, 36, 40, 53, 68, 72')
+input('Press "enter" for close program ')
