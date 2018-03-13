@@ -1,10 +1,10 @@
-s = [1, 4, 10, 2, 6, 49, 24, 64]
+s = input('Enter a list of numbers without a comma: ').split()
+for i in range(len(s)):
+    s[i] = int(s[i])
 
-print(s)
-
-for i in range(1, len(s)):
-    unsorted = s[i]
-    sorted = i - 1
+for a in range(1, len(s)):
+    unsorted = s[a]
+    sorted = a - 1
     while sorted >= 0:
         if unsorted < s[sorted]:
             s[sorted], s[sorted + 1] = s[sorted + 1], s[sorted]
@@ -13,3 +13,4 @@ for i in range(1, len(s)):
             break
 
 print(s)
+input('Press "enter" for close program ')
