@@ -1,6 +1,6 @@
-s = [1, 4, 10, 2, 6, 49, 24, 64]
-
-print(s)
+s = input('Enter a list of numbers without a comma: ').split()
+for i in range(len(s)):
+    s[i] = int(s[i])
 
 for i in range(len(s)):
     min = i
@@ -12,3 +12,4 @@ for i in range(len(s)):
         s[i], s[min] = s[min], s[i]
 
 print(s)
+input('Press "enter" for close program ')
