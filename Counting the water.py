@@ -6,7 +6,7 @@ def counting_water(i):
         result.append(i * 12)
         return result
     else:
-        return print('You can not return the past :)')
+        return print('This is not true')
 
 print('To do this you will need',counting_water(i),'bottles')
 input('Press "enter" for close program ')
