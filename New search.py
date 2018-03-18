@@ -29,24 +29,24 @@ def sort(left, right):
 m = merge_sort(s)
 print('Array sorted',m)
 
-def binary_search(o, x, left=0, right=0):
-    if right == 0:
-        right = len(o) - 1
-    if right >= left:
-        mid = (left + right) // 2
-        if x > o[mid]:
-            return binary_search(o, x, mid + 1, right)
-        elif x < m[mid]:
-            return binary_search(o, x, left, mid - 1)
-        elif x == m[mid]:
+def binary_search(lst, x, lft=0, rght=0):
+    if rght == 0:
+        rght = len(lst) - 1
+    if rght >= lft:
+        mid = (lft + rght) // 2
+        if x > lst[mid]:
+            return binary_search(lst, x, mid + 1, rght)
+        elif x < lst[mid]:
+            return binary_search(lst, x, lft, mid - 1)
+        elif x == lst[mid]:
             return mid
     else:
         return -1
 
-o = merge_sort(s)
+lst = m
 x = int(input("Enter the number you want to find: "))
 
-rslt = binary_search(o, x)
+rslt = binary_search(lst, x)
 
 if rslt == -1:
     print("error")
