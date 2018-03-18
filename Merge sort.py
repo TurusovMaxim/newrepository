@@ -5,7 +5,7 @@ for i in range(len(s)):
 def merge_sort(s):
     if len(s) <= 1:
         return s
-    elif len(s) > 1:
+    else:
         mid = len(s) // 2
         left = merge_sort(s[:mid])
         right = merge_sort(s[mid:])
