@@ -5,10 +5,10 @@ for i in range(len(s)):
 def merge_sort(s):
     if len(s) <= 1:
         return s
-    elif len(s) > 1:
-        mid = len(s) // 2
-        left = merge_sort(s[:mid])
-        right = merge_sort(s[mid:])
+    else:
+        middle = len(s) // 2
+        left = merge_sort(s[:middle])
+        right = merge_sort(s[middle:])
         return sort(left, right)
 
 def sort(left, right):
@@ -26,26 +26,31 @@ def sort(left, right):
         result += right
     return result
 
-def binary_search(s, x, left=0, right=0):
+m = merge_sort(s)
+print('Array sorted',m)
+
+def binary_search(o, x, left=0, right=0):
     if right == 0:
-        right = len(s) - 1
+        right = len(o) - 1
     if right >= left:
         mid = (left + right) // 2
-        if x > s[mid]:
-            return binary_search(s, x, mid + 1, right)
-        elif x < s[mid]:
-            return binary_search(s, x, left, mid - 1)
-        elif x == s[mid]:
+        if x > o[mid]:
+            return binary_search(o, x, mid + 1, right)
+        elif x < m[mid]:
+            return binary_search(o, x, left, mid - 1)
+        elif x == m[mid]:
             return mid
     else:
         return -1
 
-result = []
+o = merge_sort(s)
 x = int(input("Enter the number you want to find: "))
 
-result = binary_search(s, x)
+rslt = binary_search(o, x)
 
-if result == -1:
-    print("-1")
+if rslt == -1:
+    print("error")
 else:
-    print("The element is in array at the index", result)
+    print("The element is in array at the index", rslt)
+
+input('Press "enter" for close program ')
