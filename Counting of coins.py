@@ -6,22 +6,19 @@ def data_checking(element):
     if element.isdecimal():
         return coin_counting(element)
     else:
-        try:
-            return coin_counting(element)
-        except ValueError:
-            element = 0
-            while element <= 0:
-                try:
-                    element = int(input('Enter an integer: '))
-                    return coin_counting(element)
-                except ValueError:
-                    print('Sorry but this is not an integer!')
+        element = 0
+        while element <= 0:
+            try:
+                element = int(input('Enter an integer greater than zero: '))
+                return coin_counting(element)
+            except ValueError:
+                print('Sorry but this is not an integer!')
 
 
 def coin_counting(element):
     """Algorithm for the selection of optimal coins"""
     while int(element) <= 0:
-        element = input('Please enter a number greater than zero: ')
+        element = input('Enter an integer greater than zero: ')
     if int(element) > 0:
         coin_fifty = int(element) // 50
         coin_test = int(element) - 50 * coin_fifty
