@@ -6,12 +6,11 @@ def data_checking(element):
     if element.isdecimal():
         return coin_counting(element)
     else:
-        element = 0
-        while element <= 0:
+        while True:
             try:
                 element = int(input('Enter an integer greater than zero: '))
                 return coin_counting(element)
-            except ValueError:
+            except (TypeError, ValueError):
                 print('Sorry but this is not an integer!')
 
 
