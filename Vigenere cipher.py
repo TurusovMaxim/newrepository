@@ -1,4 +1,4 @@
-# suggestions should be entered without spaces or commas
+# Sentences should be entered with a small letter, without spaces or commas
 element = input('Please enter any word in Russian: ')
 
 def data_checking(element):
